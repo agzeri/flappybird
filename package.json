@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "precommit": "npm t",
+    "lint:js": "eslint **/*.js",
     "test": "sass-lint --config .scss-lint.yml --verbose --no-exit"
   },
   "repository": {
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/ro9ues/flappybird#readme",
   "devDependencies": {
+    "eslint": "^4.5.0",
     "husky": "^0.14.3",
     "node-sass": "^4.5.3",
     "sass-lint": "^1.10.2"
