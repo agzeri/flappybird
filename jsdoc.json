@@ -1,0 +1,36 @@
+{
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": [ "jsdoc", "closure" ]
+  },
+  "source": {
+    "include": [ "src" ],
+    "exclude": [ "tests", "node_modules" ],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "applicationName": "FlappyBird",
+    "disqus": "",
+    "googleAnalytics": "",
+    "openGraph": {
+      "title": "Flappy Bird",
+      "type": "website",
+      "image": "",
+      "site_name": "",
+      "url": ""
+    },
+    "meta": {
+      "title": "Flappy Bird",
+      "description": "The most famous game now on the web.",
+      "keyword": "JavaScript, TDD, ES6, ESNEXT, Game"
+    },
+    "linenums": true
+  },
+  "opts": {
+    "destination": "docs"
+  }
+}
