@@ -1,0 +1,15 @@
+basePath: "https://github.com/ro9ues/flappybird"
+dest: "docs/sass"
+display:
+  access: ["private", "public"]
+  alias: true
+  watermark: true
+package:
+  title: "Flappy Bird Docs"
+  name: "flappy-bird-docs"
+  version: "0.1.0"
+  license: "MIT"
+  homepage: "https://flappybird.game"
+theme: "neat"
+groups:
+  undefined: Ungrouped
