@@ -7,6 +7,10 @@
   "scripts": {
     "precommit": "npm t",
     "predocs": "rimraf docs",
+    "coverage:report": "nyc report npm t",
+    "coverage:all": "nyc --reporter=lcov --reporter=html --reporter=text-summary npm t",
+    "coverage": "npm run -s coverage:report && npm run -s coverage:all && npm run -s coverage:check",
+    "coverage:check": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "docs:js": "jsdoc -t template -c jsdoc.json -R README.md -r",
     "docs:sass": "sassdoc _sass/",
     "docs": "npm run -s docs:js && npm run -s docs:sass",
@@ -41,10 +45,16 @@
     "jsdoc": "^3.5.4",
     "mocha": "^3.5.0",
     "node-sass": "^4.5.3",
+    "nyc": "^11.1.0",
     "rimraf": "^2.6.1",
     "sass-lint": "^1.10.2",
     "sass-true": "^3.0.0",
     "sassdoc": "^2.3.0",
     "sassdoc-theme-neat": "0.0.2"
+  },
+  "nyc": {
+    "exclude": [
+      "tests/"
+    ]
   }
 }
