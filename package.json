@@ -11,13 +11,14 @@
     "coverage:all": "nyc --reporter=lcov --reporter=html --reporter=text-summary npm t",
     "coverage": "npm run -s coverage:report && npm run -s coverage:all && npm run -s coverage:check",
     "coverage:check": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "coverage:push": "cat ./coverage/lcov.info | codecov",
     "docs:js": "jsdoc -t template -c jsdoc.json -R README.md -r",
     "docs:sass": "sassdoc _sass/",
     "docs": "npm run -s docs:js && npm run -s docs:sass",
     "lint:js": "eslint tests/**/*.js",
     "lint:sass": "sass-lint --config .scss-lint.yml --verbose --no-exit",
     "pretest": "npm run lint:js && npm run lint:sass",
-    "test": "mocha tests/** --compilers js:babel-core/register"
+    "test": "nyc --reporter=lcov --reporter=html --reporter=text-summary mocha tests/** --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "chai": "^4.1.2",
+    "codecov": "^2.3.0",
     "eslint": "^4.5.0",
     "husky": "^0.14.3",
     "jsdoc": "^3.5.4",
