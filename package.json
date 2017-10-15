@@ -18,6 +18,7 @@
     "lint:js": "eslint tests/**/*.js",
     "lint:sass": "sass-lint --config .scss-lint.yml --verbose --no-exit",
     "pretest": "npm run lint:js && npm run lint:sass",
+    "start": "webpack",
     "test": "npm run -s coverage:all -- mocha tests/** --compilers js:babel-core/register"
   },
   "repository": {
@@ -52,7 +53,8 @@
     "sass-lint": "^1.10.2",
     "sass-true": "^3.0.0",
     "sassdoc": "^2.3.0",
-    "sassdoc-theme-neat": "0.0.2"
+    "sassdoc-theme-neat": "0.0.2",
+    "webpack": "^3.7.1"
   },
   "nyc": {
     "exclude": [
