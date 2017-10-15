@@ -8,7 +8,7 @@
     "precommit": "npm t",
     "predocs": "rimraf docs",
     "coverage:report": "nyc report npm t",
-    "coverage:all": "nyc --reporter=lcov --reporter=html --reporter=text-summary npm t",
+    "coverage:all": "nyc --reporter=lcov --reporter=html --reporter=text-summary",
     "coverage": "npm run -s coverage:report && npm run -s coverage:all && npm run -s coverage:check",
     "coverage:check": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "coverage:push": "cat ./coverage/lcov.info | codecov",
@@ -18,11 +18,11 @@
     "lint:js": "eslint tests/**/*.js",
     "lint:sass": "sass-lint --config .scss-lint.yml --verbose --no-exit",
     "pretest": "npm run lint:js && npm run lint:sass",
-    "test": "nyc --reporter=lcov --reporter=html --reporter=text-summary mocha tests/** --compilers js:babel-core/register"
+    "test": "npm run -s coverage:all -- mocha tests/** --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ro9ues/flappybird.git"
+    "url": "git+https://github.com/agzeri/flappybird.git"
   },
   "keywords": [
     "FlappyBird",
@@ -34,9 +34,9 @@
   "author": "@agzeri",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ro9ues/flappybird/issues"
+    "url": "https://github.com/agzeri/flappybird/issues"
   },
-  "homepage": "https://github.com/ro9ues/flappybird#readme",
+  "homepage": "https://github.com/agzeri/flappybird#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
