@@ -1,7 +1,9 @@
-function render() {
-  var element = document.createElement('div');
+import printUsername from './components/hello';
 
-  element.textContent = '@agzeri';
+function render() {
+  const element = document.createElement('div');
+
+  element.textContent = printUsername('Yair');
   console.log(element.textContent)
 
   return element;
