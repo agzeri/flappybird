@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const APP   = path.join(__dirname, 'src');
 const DIST  = path.join(__dirname, 'dist');
@@ -25,6 +26,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Flappy Bird by @agzeri',
       inject: 'body',
