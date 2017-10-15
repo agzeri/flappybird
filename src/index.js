@@ -1,4 +1,5 @@
 import printUsername from './components/hello';
+import styles from './styles/app.scss';
 
 function render() {
   const element = document.createElement('div');
