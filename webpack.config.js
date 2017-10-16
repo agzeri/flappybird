@@ -9,10 +9,7 @@ const DIST  = path.join(__dirname, 'dist');
 
 module.exports = {
   entry: APP,
-  output: {
-    path: DIST,
-    filename: '[name].js'
-  },
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -44,5 +41,9 @@ module.exports = {
       title: 'Flappy Bird by @agzeri',
       inject: 'body'
     })
-  ]
+  ],
+  output: {
+    path: DIST,
+    filename: '[name].js'
+  }
 };
