@@ -1,7 +1,8 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const HtmlWebpackPlugin   = require('html-webpack-plugin');
+const CleanWebpackPlugin  = require('clean-webpack-plugin');
+const ExtractTextPlugin   = require('extract-text-webpack-plugin');
 
 const APP   = path.join(__dirname, 'src');
 const STYLE = path.join(__dirname, 'src/styles/app.scss');
@@ -10,6 +11,9 @@ const DIST  = path.join(__dirname, 'dist');
 module.exports = {
   entry: APP,
   devtool: 'source-map',
+  devServer: {
+    contentBase: DIST
+  },
   module: {
     rules: [
       {
